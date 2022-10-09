@@ -1,0 +1,218 @@
+/*=============== VARIABLES CSS ===============*/
+:root {
+	--header-height: 3.5rem;
+	/*========== Colors ==========*/
+	/*Color mode HSL(hue, saturation, lightness)*/
+	--first-color: hsl(5, 73%, 53%);
+	--first-color-alt: hsl(350, 73%, 52%);
+	--second-color: hsl(204, 64%, 44%);
+	--title-color: hsl(219, 8%, 95%);
+	--text-color: hsl(219, 8%, 75%);
+	--text-color-light: hsl(219, 4%, 55%);
+	--white-color: #fff;
+	--body-color: hsl(219, 4%, 4%);
+	--container-color: #dfd2c0;
+	/*========== Font and typography ==========*/
+	/*.5rem = 8px | 1rem = 16px ...*/
+	--body-font: "Montserrat", sans-serif;
+	--big-font-size: 1.75rem;
+	--h1-font-size: 1.5rem;
+	--h2-font-size: 1.25rem;
+	--h3-font-size: 1rem;
+	--normal-font-size: 0.938rem;
+	--small-font-size: 0.813rem;
+	--smaller-font-size: 0.75rem;
+	/*========== Font weight ==========*/
+	--font-medium: 500;
+	--font-semi-bold: 600;
+	/*========== z index ==========*/
+	--z-tooltip: 10;
+	--z-fixed: 100;
+}
+
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: var(--body-font);
+	-webkit-font-smothing: antialiased;
+	background-color: var(--container-color);
+	color: var(--body-color);
+}
+
+small {
+	font-size: 1.5rem;
+	font-weight: 600;
+	line-height: 2em;
+	color: #0c2430;
+}
+
+.titulo {
+	text-align: center;
+	color: var(--first-color);
+	padding: 20px;
+	font-size: var(--big-font-size);
+	font-weight: 800;
+}
+
+.subtitle {
+	text-align: center;
+}
+
+.container {
+	padding: 20px;
+}
+
+.carta {
+	position: relative;
+	width: 150px;
+	left: 100px;
+	margin-left: -75px;
+    transition: transform 0.2s;
+}
+
+.container-buttons {
+	display: flex;
+	justify-content: center;
+	margin-top: 12px;
+}
+
+#computadora-cartas,
+#jugador-cartas {
+	height: 240px;
+    max-width: 83%;
+    text-align: center;
+}
+
+.btn {
+	display: inline-block;
+	background: var(--first-color);
+	color: white;
+	opacity: 0.85;
+	padding: 0.4rem 1.3rem;
+	font-size: 1rem;
+	text-align: center;
+	border: none;
+	cursor: pointer;
+	margin-right: 0.5rem;
+	outline: none;
+	border-radius: 3px;
+	box-shadow: 0 0 0 1px #f40000 inset,
+		0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 4px 0 0 #882525,
+		0 4px 0 1px rgba(0, 0, 0, 0.4), 0 4px 4px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn-control {
+	background: var(--second-color);
+	box-shadow: 0 0 0 1px #161c4a inset,
+		0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 4px 0 0 #2f649d,
+		0 4px 0 1px rgba(0, 0, 0, 0.4), 0 4px 4px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn:hover {
+	opacity: 1;
+}
+
+.tachado {
+	-webkit-text-decoration-line: line-through; /* Safari */
+	text-decoration-line: line-through;
+	text-decoration-color: var(--first-color);
+	text-decoration-thickness: 0.25rem;
+}
+
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	transition: 200ms ease-in-out;
+	border: 1px solid black;
+	border-radius: 10px;
+	z-index: 10;
+	background-color: white;
+	width: 500px;
+	max-width: 80%;
+}
+
+.modal.active {
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+	padding: 10px 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+.modal-header .close-button {
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background: none;
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+.modal-body {
+	padding: 10px 15px;
+}
+
+#overlay {
+	position: fixed;
+	opacity: 0;
+	transition: 200ms ease-in-out;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	pointer-events: none;
+}
+
+#overlay.active {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.sidebar{
+	/* display: -webkit-box !important; */
+	/* display: -ms-flexbox !important; */
+	display: flex !important;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: column;
+	flex-flow: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 320px;
+	font-size: 1rem;
+	color: #eff0fc;
+	z-index: 100;
+	background: #0c2430;
+	height: 100%;
+	-webkit-transition: -webkit-transform .2s ease-in;
+	/* transition: -webkit-transform .2s ease-in; */
+	transition: transform .2s ease-in;
+	transition: transform .2s ease-in,-webkit-transform .2s ease-in;
+}
