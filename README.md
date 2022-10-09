@@ -3,6 +3,7 @@
 Basic BlackJack game built with HTML, CSS and JavaScript
 
 ## Getting Started ♠
+- [Demo](https://sanurb.github.io/blackjack-js/)
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
