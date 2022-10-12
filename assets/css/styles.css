@@ -85,12 +85,13 @@ small {
 	display: flex;
 	justify-content: center;
 	margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 #computadora-cartas,
 #jugador-cartas {
 	height: 240px;
-    max-width: 83%;
+    max-width: 90%;
     text-align: center;
 }
 
@@ -121,6 +122,10 @@ small {
 
 .btn:hover {
 	opacity: 1;
+}
+
+.btn:disabled{
+	opacity: 0.25;
 }
 
 .tachado {
@@ -189,30 +194,4 @@ small {
 #overlay.active {
 	opacity: 1;
 	pointer-events: all;
-}
-
-.sidebar{
-	/* display: -webkit-box !important; */
-	/* display: -ms-flexbox !important; */
-	display: flex !important;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-flow: column;
-	flex-flow: column;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	width: 320px;
-	font-size: 1rem;
-	color: #eff0fc;
-	z-index: 100;
-	background: #0c2430;
-	height: 100%;
-	-webkit-transition: -webkit-transform .2s ease-in;
-	/* transition: -webkit-transform .2s ease-in; */
-	transition: transform .2s ease-in;
-	transition: transform .2s ease-in,-webkit-transform .2s ease-in;
 }
